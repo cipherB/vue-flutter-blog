@@ -1,6 +1,11 @@
 <template>
   <article id="article" v-if="typeof article !== 'undefined'" >
-    <img :src="article.jetpack_featured_media_url" :alt="article.slug" id="article__img"/>
+    <router-link 
+      :to="{path: `/detail/${article.id}/${article.slug}`}"
+      style="cursor:pointer"
+    >
+      <img :src="article.jetpack_featured_media_url" :alt="article.slug" id="article__img"/>
+    </router-link>
     <section id="article__element">
       <div id="article__element__row1" >
         <p id="article__element__row1-cat" >News Article</p>
