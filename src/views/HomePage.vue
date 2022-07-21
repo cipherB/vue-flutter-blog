@@ -1,7 +1,7 @@
 <template>
   <LatestArticle :article="articles[0]" />
   <section id="articles-section">
-    <div :key="article.id" v-for="article in articles" >
+    <div :key="article.id" v-for="article in articleSlice" >
       <BlogArticle :article="article" />
     </div>
   </section>
@@ -18,16 +18,23 @@ export default {
   props: {
     articles: Array
   },
+  data () {
+    return {
+      articleSlice: []
+    }
+  },
   components: {
     BlogArticle,
     LatestArticle,
     JoinUs
+  },
+  mounted () {
+    this.articleSlice = this.articles.slice(1, this.articles.length)
   }
 }
 </script>
 <style lang="scss" scoped>
 #articles-section {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 57px;

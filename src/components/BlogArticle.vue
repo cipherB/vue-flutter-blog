@@ -30,7 +30,7 @@
 export default {
   name: 'BlogArticle',
   props: {
-    article: Object
+    article: Object,
   }
 }
 </script>

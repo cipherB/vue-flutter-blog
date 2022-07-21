@@ -86,6 +86,11 @@ h3 {
     margin-bottom: 46px;
     width: 100%;
     overflow-x: auto;
+
+    // > img {
+    //   width: 100%;
+
+    // }
   }
   &__articles {
     width: 100%;
