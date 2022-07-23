@@ -16,21 +16,19 @@ import JoinUs from '@/components/JoinUs'
 export default {
   name: 'HomePage',
   props: {
-    articles: Array
+    articles: Array,
+    articleSlice: Array
   },
-  data () {
-    return {
-      articleSlice: []
-    }
-  },
+  // data () {
+  //   return {
+  //     articleSlice: this.articles.slice(1, this.articles.length)
+  //   }
+  // },
   components: {
     BlogArticle,
     LatestArticle,
     JoinUs
   },
-  mounted () {
-    this.articleSlice = this.articles.slice(1, this.articles.length)
-  }
 }
 </script>
 <style lang="scss" scoped>

@@ -1,7 +1,10 @@
 <template>
   <div id="container" >
     <NavBar />
-    <router-view :articles="articles" ></router-view>
+    <router-view 
+      :articles="articles" 
+      :articleSlice="articles.slice(1, this.articles.length)" 
+    ></router-view>
   </div>
 </template>
 
@@ -16,7 +19,8 @@ export default {
   },
   data () {
     return {
-      articles: []
+      articles: [],
+      articleSlice: [],
     }
   },
   methods: {
@@ -36,6 +40,7 @@ export default {
   },
   async created() {
     this.articles = await this.fetchArticles()
+    this.articleSlice = await this.articles.slice(1, this.articles.length)
   }
 }
 </script>
